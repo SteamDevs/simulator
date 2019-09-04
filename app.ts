@@ -9,6 +9,16 @@ import { configDB }from './utils/connection'
  *  nodemon dist/ nodemon app.js
 */
 
+/**
+ *  lat DECIMAL(10,8)	Obligatorio
+    lng	DECIMAL(10,8)	Obligatorio
+    battery_level	INT	Opcional
+    uuid_device	VARCHAR(50)	Obligatorio
+    rumbo	DECIMAL(10,8)	Opcional
+    speed	DECIMAL(10,8)	Opcional
+
+ */
+
 
 Server.getInstance
     .app.use( bodyParser.urlencoded({ extended: true }) );
