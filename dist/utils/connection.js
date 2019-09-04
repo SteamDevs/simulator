@@ -43,7 +43,7 @@ var mongoose_1 = __importDefault(require("mongoose"));
 exports.configDB = function (URL_DATABASE) { return __awaiter(_this, void 0, void 0, function () {
     return __generator(this, function (_a) {
         return [2 /*return*/, new Promise(function (resolve, reject) {
-                mongoose_1.default.connect(URL_DATABASE)
+                mongoose_1.default.connect(URL_DATABASE, { useNewUrlParser: true })
                     .then(function () {
                     resolve('[DB Connected]');
                 }).catch(function (e) {

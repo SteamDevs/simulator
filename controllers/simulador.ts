@@ -57,7 +57,7 @@ export class Simulador {
             if(!data){
                 res.status(404).send({ message: 'No hay datos' })
             }else{
-                res.status(200).send({ message: 'dato:' + data})
+                res.status(200).send({ data })
             }
         })
     }
