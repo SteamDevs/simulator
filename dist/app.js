@@ -7,6 +7,7 @@ var server_1 = require("./utils/server");
 var body_parser_1 = __importDefault(require("body-parser"));
 var cors_1 = __importDefault(require("cors"));
 var connection_1 = require("./utils/connection");
+var simulacion_1 = __importDefault(require("./routes/simulacion"));
 /**
  * compile
  *  tsc -w  ./raiz
@@ -27,7 +28,8 @@ server_1.Server.getInstance
     .app.use(body_parser_1.default.json());
 server_1.Server.getInstance
     .app.use(cors_1.default({ origin: true, credentials: true }));
-connection_1.configDB("mongodb://localhost:27017/dd").then(function (dbConfig) {
+server_1.Server.getInstance.app.use('/api/v1', simulacion_1.default);
+connection_1.configDB("mongodb://localhost:27017/simulador").then(function (dbConfig) {
     server_1.Server.getInstance.startAPP(function () {
         console.log("\n            [ API ] Running on port " + server_1.Server.getInstance.port + "\n            " + dbConfig + "\n        ");
     });
